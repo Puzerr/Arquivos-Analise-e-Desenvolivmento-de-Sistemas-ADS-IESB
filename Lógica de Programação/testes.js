@@ -16,3 +16,4 @@ console.log(foo); //Retornou 1
 console.log(bar); //Retornou 2
 console.log(baz); //Baz não está definido
 console.log(bam); //Bam não está definido
+
