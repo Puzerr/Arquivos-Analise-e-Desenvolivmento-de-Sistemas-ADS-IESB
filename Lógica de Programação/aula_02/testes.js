@@ -9,3 +9,11 @@ N3=Number(prompt("Digite a segunda nota: "))
 Media=(N1+N2+N3)/3
 
 console.log(Media)
+
+var a = 10, b = 5, c = 0
+
+function soma(){
+    c = a+b
+}
+soma()
+console.log(c)
