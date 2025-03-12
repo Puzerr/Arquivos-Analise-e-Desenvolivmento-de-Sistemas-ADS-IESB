@@ -1,0 +1,27 @@
+<HTML>
+
+    <HEAD>
+        <TITLE>Criando FORMULARIOS</TITLE>
+     </HEAD>
+     <body>
+        <form>
+            Primeiro nome: 
+            <input type="text" name="firstname" id="firstname">
+            <input type="button" value="mostra" onclick="mostra()">
+            <br>
+            Último nome: 
+            <input type="text" name="lastname">
+            
+            <script>
+                function mostra(){
+                   var nome = window.document.getElementById("firstname").value
+                   window.alert(nome)
+
+                }
+
+            </script>
+            
+
+        </form>
+    </body>
+</HTML>

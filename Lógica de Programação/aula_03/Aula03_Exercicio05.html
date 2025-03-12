@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programando em JavaScript</title>
+    <style>
+        body {
+            background-color: coral;
+            color: azure;
+            font: normal 16pt Arial;
+        }
+        h1{
+            color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Iniciando a programação</h1>
+
+    <script>
+        window.alert("Tudo bem com VOCÊS!!!")
+        window.confirm("Esta gostando da AULA?")
+        var nome = window.prompt("Qual é o seu nome? ")
+        window.alert("Tudo bem com você, " + nome +" ... que bom tê-lo nesta aula !!!")
+
+        // Podemos utilizar Number.parseInt(n) para numeros inteiros ou Number.parseFloat(n) para números reais (com casas decimais)
+        var n1 = Number.parseInt(window.prompt("Digite o PRIMEIRO número: "))
+        var n2 = Number.parseInt(window.prompt("Digite o SEGUNDO  número: "))
+
+        // Podemos utilizar só Number
+        var n1 = Number(window.prompt("Digite o PRIMEIRO número: "))
+        var n2 = Number(window.prompt("Digite o SEGUNDO  número: "))
+
+        var soma = n1 + n2  
+        window.alert("A soma do número " + n1 + " + " + n2 + " é: " + soma)
+
+        var s = String(soma)
+        window.alert("A soma do número " + n1 + " + " + n2 + " é: " + s)
+
+        // outra forma de exibir a msg é utilizar place holder $ - utilizar a crase no texto
+        window.alert(`A soma do número ${n1} + ${n2} é: ${soma}`)
+
+        document.write("A soma é: " + soma.toFixed(4).replace('.',',')) // colcoando ,
+        document.writeln("A soma é: " + soma.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})) // colocando R%$
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemplo getElementById</title>
+  
+  </head>
+
+  <body>
+    <p id="para1">Este e o PARA 1 - Algum texto de exemplo</p>
+    <p id="para2">Este e o PARA 2 - Vamos mudar de cor novamente</p>
+    <button onclick="mudarCor('blue');">Azul</button>
+    <button onclick="mudarCor('red');">Vermelho</button>
+    <button onclick="mudarCor('green');">Verde</button>
+    <button onclick="mudarCor2('red');">Muda para2 para vermelho</button>
+
+    <script>
+      function mudarCor(novaCor) {
+        var elemento = document.getElementById("para1");
+        elemento.style.color = novaCor;
+      }
+      function mudarCor2(novaCor) {
+        var linha = document.getElementById("para2");
+        linha.style.color = novaCor;
+      }
+      </script>
+      
+  </body>
+</html>
+
+
+
