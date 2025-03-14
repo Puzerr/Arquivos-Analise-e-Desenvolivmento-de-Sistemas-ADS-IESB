@@ -1,8 +1,8 @@
 //let valor // não inicializada
 //console.log(valor)
-let nome = ''
-console.log(nome)
-//valor = null // ausência de valor
+//let nome = ''
+//console.log(nome)
+//valor = null//ausência de valor
 //console.log(valor)
 //console.log(valor.toString()) // Erro!
 /*
