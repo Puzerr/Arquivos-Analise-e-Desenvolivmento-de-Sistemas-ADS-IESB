@@ -56,7 +56,7 @@ vet.pop(2) // Exclui o valor e a posição.
 console.log(vet)
 delete vet[0] // Apaga o item, mas mantem a posição
 console.log(vet) // [ <1 empty item>, 8.5 ]
-*/
+
 
 function media(p1,p2){
     bim1 = p1 * 0.4
@@ -71,3 +71,26 @@ function media(p1,p2){
 media(3, 2)
 
 console.log(10==1)
+
+ var a1 = false||false
+console.log(a1)
+
+var nome = "Raphael", n1 = 8, n2 = 9, n3 = 3;
+var media = (n1+n2+n3)/3;
+
+if (media>=5){
+    console.log("A média do alno "+ nome +" é: "+ media.toFixed(2) +", aprovado!")
+}else{
+    console.log("A média do aluno "+ nome +" é: "+ media.toFixed(2) +", Reprovado")
+}
+*/
+
+var x = 10, y = 5, z =7;
+
+if (x>y && x>z){
+    console.log("X é o maior!")
+}else if (y>x && y>z){
+    console.log("Y é o maior!")
+}else{
+    console.log("Z  é o maior!")
+}
