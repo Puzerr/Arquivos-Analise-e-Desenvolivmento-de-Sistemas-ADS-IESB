@@ -74,7 +74,11 @@ console.log(10==1)
 
  var a1 = false||false
 console.log(a1)
+*/
 
+/*--------------------------------------------------------*/
+
+/*Concatenação de string com*/
 var nome = "Raphael", n1 = 8, n2 = 9, n3 = 3;
 var media = (n1+n2+n3)/3;
 
@@ -83,8 +87,12 @@ if (media>=5){
 }else{
     console.log("A média do aluno "+ nome +" é: "+ media.toFixed(2) +", Reprovado")
 }
-*/
 
+
+/*--------------------------------------------------------*/
+
+/*Comparador entre 3 números*/
+{
 var x = 10, y = 5, z =7;
 
 if (x>y && x>z){
@@ -94,3 +102,87 @@ if (x>y && x>z){
 }else{
     console.log("Z  é o maior!")
 }
+}
+
+/*--------------------------------------------------------*/
+
+/* CALCULAR MEDIA*/
+{
+const prompt = require('prompt-sync')({sigint:true})
+var n1=0, n2=0, n3=0, nome;
+nome = prompt("Digite o seu nome: ")
+n1 = Number(prompt("Digite a nota 1: "))
+n2 = Number(prompt("Digite a nota 2: "))
+n3 = Number(prompt("Digite a nota 3: "))
+
+function media(n1,n2,n3){
+    let media;
+    media = (n1+n2+n3)/3
+    if (media>=5){
+        console.log("O aluno "+nome+" está APROVADO!")
+    } else if (media>=3 && media<5){
+        console.log("O aluno "+nome+" está de RECUPERAÇÃO!")
+    }else {
+        console.log("O aluno "+nome+" está REPROVADO!")
+    }
+}
+media(n1,n2,n3);
+}
+
+/*--------------------------------------------------------*/
+
+/*Calculadora delta*/
+{
+const prompt = require('prompt-sync')({sigint:true})
+var b, a, c;
+b = Number(prompt("Digite o valor de b: "))
+a = Number(prompt("Digite o valor de a: "))
+c = Number(prompt("Digite o valor de c: "))
+
+function delta(b,a,c){
+    let delta
+    delta = (b*b)-(4*a*c)
+    console.log(delta)
+}
+delta(b,a,c)
+}
+
+/*--------------------------------------------------------*/
+
+/*Calculadora Celsius para Fahrenheit*/ 
+{
+const prompt = require('prompt-sync')({sigint:true})
+var f, c;
+c = Number(prompt("Digite o valor em graus celcius: "));
+function conversao(c){
+    let f
+    f = (9.0*c+160.0)/5.0
+    console.log(c+"°C graus celcius é equivalente à "+f+"°F graus fahrenheit.")
+}
+conversao(c)
+}
+
+/*--------------------------------------------------------*/
+
+/*Métricas de uma viagem de carro*/
+const prompt = require("prompt-sync")({sigint:true})
+/*Variáveis*/
+var tempo=0, velocidade = 0, distancia = 0, consumo_medio=10, qtd_combutivel = 0
+
+/*Entrada de dados*/
+velocidade = Number(prompt("Digite a velocidade: "))
+tempo = Number(prompt("Digite o tempo (em horas): "))
+
+/*Calcular distancia gasto*/
+distancia = tempo*velocidade
+
+/*Consumo de combustpivel*/
+qtd_combutivel= distancia/consumo_medio
+
+/*Media de velocidade, tempo gasto, distancia e quantidade de litros*/
+console.log("A velocidade média é "+velocidade)
+console.log("O tempo gasto foi de "+tempo+" horas")
+console.log("A distância percorrida foi de "+distancia+"km")
+console.log("A quantidade de litros utilizados foi de "+qtd_combutivel)
+
+/*--------------------------------------------------------*/
