@@ -1,14 +1,12 @@
-const prompt = require("prompt-sync")({sigint:true})
-var vlr1, vlr2 = 0
-var vlr1 = Number(prompt("Digite o valor 1: "))
-var vlr2 = Number(prompt("Digite o valor 2: "))
+const prompt = require("prompt-sync")({signit:true})
 
-function leitura(vlr1,vlr2){
-    while(vlr2==0){
-        vlr2 = prompt("O segundo valor deve ser diferente de 0: ")
-    }
-    let divisao
-    divisao = (vlr1/vlr2)
-    console.log(divisao)
+var num = 0, count = 0, continua = "S", acumulador = 0, media = 0
+
+while(continua == "S"){
+    num = Number(prompt("Digite o número: "))
+    acumulador = acumulado + num
+    count++
+    continua = prompt("Deseja continuar? (S/N) ")
 }
-leitura(vlr1,vlr2)
+media = acumulador/count
+console.log(`A média é ${media}, a soma é ${acumulador} e foram digitados ${count} números.`)

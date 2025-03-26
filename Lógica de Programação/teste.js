@@ -1,3 +1,4 @@
+/*Outros*/
 {
 var pessoa = {
     nome: "Raphael",
@@ -78,8 +79,9 @@ console.log(a1)
 
 /*--------------------------------------------------------*/
 
-{
+
 /*Concatenação de string com*/
+{
 var nome = "Raphael", n1 = 8, n2 = 9, n3 = 3;
 var media = (n1+n2+n3)/3;
 
@@ -92,7 +94,7 @@ if (media>=5){
 
 /*--------------------------------------------------------*/
 
-{
+
 /*Comparador entre 3 números*/
 {
 var x = 10, y = 5, z =7;
@@ -105,13 +107,11 @@ if (x>y && x>z){
     console.log("Z  é o maior!")
 }
 }
-}
-
 
 /*--------------------------------------------------------*/
 
-{
 /* CALCULAR MEDIA*/
+{
 {
 const prompt = require('prompt-sync')({sigint:true})
 var n1=0, n2=0, n3=0, nome;
@@ -137,7 +137,6 @@ media(n1,n2,n3);
 
 /*--------------------------------------------------------*/
 
-{}
 /*Calculadora delta*/
 {
 const prompt = require('prompt-sync')({sigint:true})
@@ -153,11 +152,9 @@ function delta(b,a,c){
 }
 delta(b,a,c)
 }
-}
 
 /*--------------------------------------------------------*/
 
-{
 /*Calculadora Celsius para Fahrenheit */
 {
 const prompt = require('prompt-sync')({sigint:true})
@@ -170,12 +167,12 @@ function conversao(c){
 }
 conversao(c)
 }
-}
 
 /*--------------------------------------------------------*/
-{
+
 /*Métricas de uma viagem de carro*/
-const prompt = require("prompt-sync")({sigint:true})*/
+{
+const prompt = require("prompt-sync")({sigint:true})
 /*Variáveis
 var tempo=0, velocidade = 0, distancia = 0, consumo_medio=10, qtd_combutivel = 0
 
@@ -198,8 +195,8 @@ console.log("A quantidade de litros utilizados foi de "+qtd_combutivel)
 
 /*--------------------------------------------------------*/
 
-{
 /*Algoritmo de laço WHILE*/
+{
 var count = 0;
 
 while (count < 10){
@@ -208,8 +205,10 @@ while (count < 10){
 }
 }
 
-{
+/*--------------------------------------------------------*/
+
 /*Outro exemplo de WHILE*/
+{
 function getInteiroAleatorioEntre(min, max){
     const valor = Math.random() * (max - min) + min;
     return Math.floor(valor);
@@ -223,8 +222,10 @@ while (opcao != -1){
 console.log("Até a próxima!")
 }
 
-{
+/*--------------------------------------------------------*/
+
 /*Laço DO/WHILE*/
+{
 var c = 1
 
 do {
@@ -232,10 +233,11 @@ console.log(`Passo ${c}`)
 c++
 } while (c <= 2)
 }
+
 /*--------------------------------------------------------*/
 
-
 /*Laço de repetição para a entrada correta de informação*/
+{
 const prompt = require("prompt-sync")({sigint:true})
 var vlr1, vlr2 = 0
 var vlr1 = Number(prompt("Digite o valor 1: "))
@@ -243,29 +245,117 @@ var vlr2 = Number(prompt("Digite o valor 2: "))
 
 function leitura(vlr1,vlr2){
     while(vlr2==0){
+        console.log("VALOR INVÁLIDO")
         vlr2 = prompt("O segundo valor deve ser diferente de 0: ")
     }
     let divisao
     divisao = (vlr1/vlr2)
-    console.log(divisao)
+    console.log(`A divisão de ${vlr1} e ${vlr2} é ${divisao}.`)
 }
 leitura(vlr1,vlr2)
+}
 
 /*--------------------------------------------------------*/
 
 /*Loopoing usando uma sentinela*/
+
 const prompt = require("prompt-sync")({sigint:true})
 var numeros = []
-var entrada = prompt("Digite um número")
+var entrada = prompt("Digite um número: ")
 
-while(entrada != 9999){
+while(entrada != "sair"){
     numeros.push(parseInt(entrada));
-    entrada = prompt("Digite o próximo número")
+    entrada = prompt("Digite o próximo número: ")
+    if (entrada=="sair"){
+        break
+    }
+}
+console.log(numeros)
+
+for (i in numeros){
+
 }
 
-var somanumeros 
-somanumeros = numeros.reduce()
-console.log(somanumeros)
+/*--------------------------------------------------------*/
 
-var medianumeros
-medianumeros = numeros.
+const prompt = require("prompt-sync")({signit:true})
+
+var num = 0, count = 0, continua = "S", acumulador = 0, media = 0
+
+while(continua == "S"){
+    num = Number(prompt("Digite o número: "))
+    acumulador = acumulador + num
+    count++
+    continua = prompt("Deseja continuar? (S/N) ")
+}
+media = acumulador/count
+console.log(`A média é ${media}, a soma é ${acumulador} e foram digitados ${count} números.`)
+
+/*--------------------------------------------------------*/
+
+/*Calculadora básica*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var number1 = 0, number2 = 0, operador= 0
+number1 = Number(prompt("Digite o primeiro número: "));
+operador = prompt("Qual a operação? (+,-,/,* ou ^): ");
+number2 = Number(prompt("Digite o segundo número: "));
+
+function calculadora(number1,operador,number2,){
+    switch(operador){
+        case "+":
+            let soma    
+            soma = number1+number2
+            console.log(soma)
+            break
+        case "-":
+            let subtracao
+            subtracao = number1-number2
+            console.log(subtracao)
+            break
+        case "/":
+            let divisao
+            divisao = number1/number2
+            console.log(divisao)
+            break
+        case "*":
+            let multiplicacao
+            multiplicacao = number1*number2
+            console.log(multiplicacao)
+            break
+        case "^":
+            let potencia
+            potencia = Math.pow(number1,number2)
+            console.log(potencia)
+        default:
+            console.log("Operador inválido.")
+    };
+};
+calculadora(number1,operador,number2,);
+}
+
+/*--------------------------------------------------------*/
+
+/*Verificador de tentativas de login*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var senhabanco = "oi"
+
+for(tentativa = 1; tentativa <= 3, tentativa++;){
+    senha = prompt("Digite a sua senha: ")
+    if (senha == senhabanco){
+        console.log("Senha correta!")
+        break
+    }else{
+        console.log("Tentativa ",tentativa,".")
+        if(tentativa == 3){
+            console.log("Conta bloqueada!")
+            break
+        }
+    }
+}
+}
+
+/*--------------------------------------------------------*/
