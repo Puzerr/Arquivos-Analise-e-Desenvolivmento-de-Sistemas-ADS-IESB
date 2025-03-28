@@ -258,26 +258,34 @@ leitura(vlr1,vlr2)
 /*--------------------------------------------------------*/
 
 /*Loopoing usando uma sentinela*/
-
-const prompt = require("prompt-sync")({sigint:true})
+{
+const prompt = require("prompt-sync")({sigint:true})   //Entrada dos números
 var numeros = []
 var entrada = prompt("Digite um número: ")
 
-while(entrada != "sair"){
-    numeros.push(parseInt(entrada));
+while(entrada != 9999){                               //Enquanto o valor inserido for diferente de 9999, 
+    numeros.push(parseInt(entrada));                  //não sairá do loopoing entrada de dados
     entrada = prompt("Digite o próximo número: ")
-    if (entrada=="sair"){
+    if (entrada==9999){
         break
     }
 }
-console.log(numeros)
 
-for (i in numeros){
-
+var maior = 0                //Verificação do maior número
+var i = 0
+while(i < numeros.length){ 
+    if(maior < numeros[i]){
+        maior = numeros[i]
+    }
+    i++
+}
+console.log(maior)
 }
 
 /*--------------------------------------------------------*/
 
+/*Cálculo de média com acumulador e contagem de vezes digitadas*/
+{
 const prompt = require("prompt-sync")({signit:true})
 
 var num = 0, count = 0, continua = "S", acumulador = 0, media = 0
@@ -290,6 +298,7 @@ while(continua == "S"){
 }
 media = acumulador/count
 console.log(`A média é ${media}, a soma é ${acumulador} e foram digitados ${count} números.`)
+}
 
 /*--------------------------------------------------------*/
 
@@ -359,3 +368,54 @@ for(tentativa = 1; tentativa <= 3, tentativa++;){
 }
 
 /*--------------------------------------------------------*/
+
+/*Verificar qual é o maior número*/
+{
+const notas = [4,7,2,5,10,9,13,20]
+var maior = 0
+
+for(var i = 0; i < notas.length; i++){
+    if(maior < notas[i]){
+        maior = notas[i]
+    }
+}
+/* Faz a mesma coisa que o for
+while(i <notas.length){
+    if(maior < notas[i]){
+        maior = notaas[i]
+    }
+    i++
+}
+*/
+console.log(maior)
+}
+
+/*--------------------------------------------------------*/
+
+/*Mostrar a quantidade de números pares e ímpares*/
+
+const prompt = require("prompt-sync")({signit:true})
+
+var entrada = prompt("Digite os números: "), count = 0
+const numeros = []
+
+while(entrada != 9999){            //Entrada de dados no array
+    numeros.push(parseInt(entrada))
+    entrada = prompt("Próximo número: ")
+    count++
+    if(entrada == 9999){
+        break
+    }
+}
+
+var qtd_impar = 0 , qtd_par = 0
+var i = 0
+
+for(i in numeros){
+    if(numeros[i]%2 == 0){
+        qtd_par++
+    }else{
+        qtd_impar++
+    }
+}
+console.log(`A quantidade de números ímpares é de ${qtd_impar} e a quantidade de números pares é ${qtd_par}`)
