@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Aula 06 - Exercício 04</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var nome = prompt("Digite o nome completo do aluno: ");
+        var turma = prompt("Digite a turma do aluno: ");
+        var disciplina = prompt("Digite a disciplina do aluno: ");
+        var nota1 = parseInt(prompt("Digite a primeira nota do aluno:"));
+        var nota2 = parseInt(prompt("Digite a segunda nota do aluno:"));
+        var nota3 = parseInt(prompt("Digite a terceira nota do aluno:"));
+        var media = (nota1+nota2+nota3)/3;
+
+        if(media>5){
+            document.write ("Aluno aprovado!" + nome + "-" + turma + "-" + disciplina + "- Média: " + media.toFixed(2))
+        }else if(5>media >=3){
+            document.write ("Aluno em recuperação!" + nome + "-" + turma + "-" + disciplina + "- Média: " + media.toFixed(2))
+        }else{
+            document.write ("Aluno reprovado!" + nome + "-" + turma + "-" + disciplina + "- Média: " + media.toFixed(2))
+        }
+</script>
+</body>
+</html>

@@ -1,28 +1,19 @@
 const prompt = require("prompt-sync")({signit:true})
 
-var entrada = prompt("Digite os números: "), count = 0
-const numeros = []
+var tipo_veiculo = prompt("Digite o seu tipo de vículo: ")
 
-while(entrada != 9999){            //Entrada de dados no array
-    numeros.push(parseInt(entrada))
-    entrada = prompt("Próximo número: ")
-    count++
-    if(entrada == 9999){
-        break
-    }
+switch(tipo_veiculo.toUpperCase()){
+    case "SUV":
+        console.log("Você escolheu um TOYOYTA SW4");
+        break;
+    case "HATCH":
+        console.log("Você escolheu um Fiat Punto");
+        break;
+    case "CUPE":
+        console.log("Você escolheu um Hyunday Veloster");
+        break;
+    case "VAN":
+        console.log("Você escolheu uma Volskwagen Kombi")
+    default:
+        console.log("O tipo que você escolheu não existe.")
 }
-
-var qtd_impar = 0 , qtd_par = 0
-var i = 0
-
-for(i in numeros){
-    if(count==0){
-        console.log("Nenhum número digitado.")
-        break
-    }else if(numeros[i]%2 == 0){
-        qtd_par++
-    }else{
-        qtd_impar++
-    }
-}
-console.log(`A quantidade de números ímpares é de ${qtd_impar} e a quantidade de números pares é ${qtd_par}`)

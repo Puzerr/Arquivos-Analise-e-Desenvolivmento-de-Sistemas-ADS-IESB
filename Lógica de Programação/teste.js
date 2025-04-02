@@ -393,7 +393,7 @@ console.log(maior)
 /*--------------------------------------------------------*/
 
 /*Mostrar a quantidade de números pares e ímpares*/
-
+{
 const prompt = require("prompt-sync")({signit:true})
 
 var entrada = prompt("Digite os números: "), count = 0
@@ -419,3 +419,94 @@ for(i in numeros){
     }
 }
 console.log(`A quantidade de números ímpares é de ${qtd_impar} e a quantidade de números pares é ${qtd_par}`)
+}
+/*--------------------------------------------------------*/
+
+/*Verificar se determinados números satisfazem um pedido*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+const matriz = []
+var entrada = 0, limite = 15
+
+while(entrada !="s"){
+    entrada = prompt("Digite um número (\"s\" para finalizar) : ")
+    if(entrada=="s"){
+        break
+    }else if(matriz.length==limite){
+        break
+    }
+    matriz.push(parseInt(entrada))
+}
+
+var i = 0
+const matriz_dentro = []
+const matriz_fora = []
+
+for(i = 0; i< matriz.length;i++){
+    if(matriz[i]>=10 && matriz[i]<=20){
+        matriz_dentro.push(matriz[i])
+    }else{
+        matriz_fora.push(matriz[i])
+    }
+}
+
+console.log("Os números entre 10 e 20 são: ",matriz_dentro)
+console.log("Os números que não estão dentro de 10 e 20 são: ",matriz_fora)
+}
+
+/*--------------------------------------------------------*/
+
+/*Mensagem semáforo 1.0*/
+{
+const prompt = require("prompt-sync")({siginit:true})
+
+var semaforo = ""
+semaforo = prompt("Status do Semáforo: ")
+
+if(semaforo.toUpperCase()=="VERDE"){
+    console.log("Pode passar")
+}else{
+    console.log("Você não pode passar!")
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Mensagem semáforo 2.0*/
+{
+const prompt = require("prompt-sync")({siginit:true})
+
+var semaforo = ""
+semaforo = prompt("Status do Semáforo: ")
+
+if(semaforo.toUpperCase()=="VERDE"){
+    console.log("Pode passar")
+}else if(semaforo.toUpperCase()=="VERMELHO"){
+    console.log("Pare")
+}else{
+    console.log("Atenção")
+}
+}
+
+/*--------------------------------------------------------*/
+
+const prompt = require("prompt-sync")({signit:true})
+
+var tipo_veiculo = prompt("Digite o seu tipo de vículo: ")
+
+switch(tipo_veiculo.toUpperCase()){
+    case "SUV":
+        console.log("Você escolheu um TOYOYTA SW4");
+        break;
+    case "HATCH":
+        console.log("Você escolheu um Fiat Punto");
+        break;
+    case "CUPE":
+        console.log("Você escolheu um Hyunday Veloster");
+        break;
+    case "VAN":
+        console.log("Você escolheu uma Volskwagen Kombi")
+    default:
+        console.log("O tipo que você escolheu não existe.")
+}
