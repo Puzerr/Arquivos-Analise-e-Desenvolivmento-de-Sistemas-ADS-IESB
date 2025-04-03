@@ -491,6 +491,8 @@ if(semaforo.toUpperCase()=="VERDE"){
 
 /*--------------------------------------------------------*/
 
+/*Escolher carro por tipo (switch)*/
+{
 const prompt = require("prompt-sync")({signit:true})
 
 var tipo_veiculo = prompt("Digite o seu tipo de vículo: ")
@@ -509,4 +511,136 @@ switch(tipo_veiculo.toUpperCase()){
         console.log("Você escolheu uma Volskwagen Kombi")
     default:
         console.log("O tipo que você escolheu não existe.")
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Verificar qual número é maior (!isNaN)*/
+{
+const prompt = require("prompt-sync")({signit:true})
+var a = Number(prompt("Digite um número: ")) 
+var b = Number(prompt("Digite outro número: "))
+
+if(!isNaN(a) && !isNaN(b)){
+    if(a>b){
+        console.log(`O número ${a} é o maior.`)
+    }else if(b>a){
+        console.log(`O número ${b} é o maior.`)
+    }else{
+        console.log("Os números são iguais")
+    }
+}else{
+    console.log("Ambos devem ser um número.")
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Calculadora de aumento de salário*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var salario = 0
+
+salario = prompt("Digite seu salário: ")
+incremento = Number(prompt("Aumento desejado (15%, 10%, 7% ou outro. Sem a porcentagem): "))
+switch(incremento){
+    case 15:
+        incremento = 1.15;
+        break;
+    case 10:
+        incremento = 1.10;
+        break;
+    case 7:
+        incremento = 1.07;
+        break;
+    default:
+        incremento = (Number(incremento)/100)+1
+}
+var aumento = 0
+aumento = salario*incremento
+console.log(aumento)
+}
+
+/*--------------------------------------------------------*/
+
+/*Receber valores e verificar qual é o maior e se são iguais*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var a, b ,c = 0 
+
+a = prompt("Digite o primeiro número: ");
+b = prompt("Digite o segundo número: ");
+c = prompt("Digite o terceiro número: ");
+
+if(a>b && a>c){
+    console.log(`O número ${a} é o maior.`)
+}else if(b>a && b>c){
+    console.log(`O número ${b} é o maior.`)
+}else if(c>a && c>b){
+    console.log(`O número ${c} é o maior.`)
+}else {
+    console.log("Todos os números são iguais.")
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Repetidor de frase*/
+{
+var count = 1
+var frase = "Loops são legais!!!"
+
+while(count<=30){
+    console.log(frase," ",count)
+    count++
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Verificador de valor usando DO WHILE*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var entrada = 0
+
+do{
+    entrada = prompt("Digite um número:")
+    if(entrada>5){
+        console.log(`${entrada} é maior que 5.`)
+        break
+    }else if(entrada==5){
+        console.log(`${entrada} é igual a 5.`)
+        break
+    }else if(entrada<5){
+        console.log(`${entrada} é menor que 5.`)
+        break
+    }
+}while(entrada!=5)
+}
+
+/*--------------------------------------------------------*/
+
+/*Verificar se o denominador é zero*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var num1, num2 = 0
+
+num1 = Number(prompt("Digite o primeiro número: "))
+num2 = Number(prompt("Digite o segundo número: "))
+
+
+while(num2==0){
+    num2 = Number(prompt("O segundo número deve ser um número diferente de zero:"))
+    if(num2!=0){
+        let divisao = 0
+        divisao = num1/num2
+        console.log(divisao)
+        break
+    }
+}
 }
