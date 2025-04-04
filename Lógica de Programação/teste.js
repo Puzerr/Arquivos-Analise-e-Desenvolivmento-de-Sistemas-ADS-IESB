@@ -524,11 +524,11 @@ var b = Number(prompt("Digite outro número: "))
 
 if(!isNaN(a) && !isNaN(b)){
     if(a>b){
-        console.log(`O número ${a} é o maior.`)
+        console.log(`O número ${a} é o maior.`);
     }else if(b>a){
-        console.log(`O número ${b} é o maior.`)
+        console.log(`O número ${b} é o maior.`);
     }else{
-        console.log("Os números são iguais")
+        console.log("Os números são iguais");
     }
 }else{
     console.log("Ambos devem ser um número.")
@@ -635,7 +635,7 @@ num2 = Number(prompt("Digite o segundo número: "))
 
 
 while(num2==0){
-    num2 = Number(prompt("O segundo número deve ser um número diferente de zero:"))
+    num2 = Number(prompt("O segundo número deve ser diferente de zero:"))
     if(num2!=0){
         let divisao = 0
         divisao = num1/num2
@@ -643,4 +643,197 @@ while(num2==0){
         break
     }
 }
+}
+
+/*--------------------------------------------------------*/
+
+/*Estrutura de laço WHILE para identificar números pares e ímpares*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var entrada 
+var count = 0
+const acumulador = []
+
+while(entrada!=9999){
+    entrada = prompt("Digite um número: ")
+    if(entrada==9999){
+        break
+    }
+    acumulador.push(entrada)
+    count++
+}
+
+var pares = 0, impares = 0
+
+for(i=0;i<acumulador.length;i++){
+    if(acumulador[i]%2==0){
+        pares++
+    }else if(acumulador[i]%2==1){
+        impares++
+    }
+}
+
+console.log(`${pares} números são pares.`)
+console.log(`${impares} números são ímpares.`)
+console.log(`Foram digitados ${count} números.`)
+}
+
+/*--------------------------------------------------------*/
+
+/*Registrador de vezes que se utiliza um restaurante, retornando quantas vezes cada um entrou, o total, e o valor relativo de entrada do total*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+//aluno01
+var entrada01
+var count01 = 0
+var count_total = 0
+var aluno01
+
+aluno01 = prompt("Digite o seu nome: ")
+entrada01 = prompt(`O ${aluno01} deseja entrar? (sim ou nao) `)
+if(entrada01=="sim"){
+    for(entrada01,count01;entrada01=="sim";count01++,count_total++){
+        entrada01 = prompt("Deseja entrar (sim ou nao) ")
+    }
+    console.log(`O aluno ${aluno01} entrou no restaurante ${count01} vezes.`)
+    
+}else{
+    console.log("Até mais.")
+}
+
+
+console.log("Próximos aluno!")
+
+//aluno02
+var entrada02
+var count02 = 0
+var aluno02
+
+
+aluno02 = prompt("Digite o seu nome: ")
+entrada02 = prompt(`O ${aluno02} deseja entrar? (sim ou nao) `)
+if(entrada02=="sim"){
+    for(entrada02,count02;entrada02=="sim";count02++,count_total++){
+        entrada02 = prompt("Deseja entrar (sim ou nao) ")
+    }
+    console.log(`O aluno ${aluno02} entrou no restaurante ${count02} vezes.`)
+    
+}else{
+    console.log("Até mais.")
+}
+
+console.log("Próximos aluno!")
+
+//aluno03
+var entrada03
+var count03 = 0
+var aluno03
+
+
+aluno03 = prompt("Digite o seu nome: ")
+entrada03 = prompt(`O ${aluno03} deseja entrar? (sim ou nao) `)
+if(entrada03=="sim"){
+    for(entrada03,count03;entrada03=="sim";count03++,count_total++){
+        entrada03 = prompt("Deseja entrar (sim ou nao) ")
+    }
+    console.log(`O aluno ${aluno03} entrou no restaurante ${count03} vezes.`)
+    
+}else{
+    console.log("Até mais.")
+}
+
+console.log("Próximos aluno!")
+
+//aluno04
+var entrada04
+var count04 = 0
+var aluno04
+
+
+aluno04 = prompt("Digite o seu nome: ")
+entrada04 = prompt(`O ${aluno04} deseja entrar? (sim ou nao) `)
+if(entrada04=="sim"){
+    for(entrada04,count04;entrada04=="sim";count04++,count_total++){
+        entrada04 = prompt("Deseja entrar (sim ou nao) ")
+    }
+    console.log(`O aluno ${aluno04} entrou no restaurante ${count04} vezes.`)
+    
+}else{
+    console.log("Até mais.")
+}
+
+console.log("Próximos aluno!")
+
+//aluno05
+var entrada05
+var count05 = 0
+var aluno05
+
+
+aluno05 = prompt("Digite o seu nome: ")
+entrada05 = prompt(`O ${aluno05} deseja entrar? (sim ou nao) `)
+if(entrada05=="sim"){
+    for(entrada05,count05;entrada05=="sim";count05++,count_total++){
+        entrada05 = prompt("Deseja entrar (sim ou nao) ")
+    }
+    console.log(`O aluno ${aluno05} entrou no restaurante ${count05} vezes.`)
+    
+}else{
+    console.log("Até mais.")
+}
+
+console.log(`Entradas totais = ${count_total}`)
+
+
+var percent_aluno01, percent_aluno02, percent_aluno03, percent_aluno04, percent_aluno05
+
+percent_aluno01 = ((count01/count_total)*100).toFixed(2)
+percent_aluno02 = ((count02/count_total)*100).toFixed(2)
+percent_aluno03 = ((count03/count_total)*100).toFixed(2)
+percent_aluno04 = ((count04/count_total)*100).toFixed(2)
+percent_aluno05 = ((count05/count_total)*100).toFixed(2)
+
+console.log(`O aluno ${aluno01} entrou no restaurante ${count01} vezes. Representando ${percent_aluno01}% das entradas.`)
+console.log(`O aluno ${aluno02} entrou no restaurante ${count02} vezes. Representando ${percent_aluno02}% das entradas.`)
+console.log(`O aluno ${aluno03} entrou no restaurante ${count03} vezes. Representando ${percent_aluno03}% das entradas.`)
+console.log(`O aluno ${aluno04} entrou no restaurante ${count04} vezes. Representando ${percent_aluno04}% das entradas.`)
+console.log(`O aluno ${aluno05} entrou no restaurante ${count05} vezes. Representando ${percent_aluno05}% das entradas.`)
+}
+
+const prompt = require("prompt-sync")({signit:true})
+
+const aluno01 = {
+    nome: "Raphael",
+    contador: 0
+}
+const aluno02 = {
+    nome: "Joâo",
+    contador: 0
+}
+const aluno03 = {
+    nome: "Brisa",
+    contador: 0
+}
+const aluno04 = {
+    nome: "Pedro",
+    contador: 0
+}
+const aluno05 = {
+    nome: "Maria",
+    contador: 0
+}
+
+var contador_total = 0
+
+console.log(`Bem vindo(a) ${aluno01.nome}!`)
+var entrar = prompt(`${aluno01.nome}, bem-vindo(a). Deseja entrar? (s ou n): `)
+if(entrar=="s"){
+    while(entrar=="s"){
+        aluno01.contador++
+        contador_total++
+        var entrar = prompt("Deseja entrar novamente? (s ou n) ")
+    }
+    console.log(`O aluno ${aluno01.nome} entrou ${aluno01.contado}`)
 }
