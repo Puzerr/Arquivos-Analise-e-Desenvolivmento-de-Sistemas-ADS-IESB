@@ -802,38 +802,124 @@ console.log(`O aluno ${aluno04} entrou no restaurante ${count04} vezes. Represen
 console.log(`O aluno ${aluno05} entrou no restaurante ${count05} vezes. Representando ${percent_aluno05}% das entradas.`)
 }
 
-const prompt = require("prompt-sync")({signit:true})
+/*------------------Trabalho 1° bimestre------------------*/
 
-const aluno01 = {
-    nome: "Raphael",
-    contador: 0
-}
-const aluno02 = {
-    nome: "Joâo",
-    contador: 0
-}
-const aluno03 = {
-    nome: "Brisa",
-    contador: 0
-}
-const aluno04 = {
-    nome: "Pedro",
-    contador: 0
-}
-const aluno05 = {
-    nome: "Maria",
-    contador: 0
-}
+//Exercício 01 - Identifique de que tipo (String, Number ou Boolean) são as constantes a seguir:
+var a = "Limão"
+console.log(typeof a)
+//Saída: string
 
-var contador_total = 0
+var b = 34857
+console.log(typeof b)
+//Saída: number
 
-console.log(`Bem vindo(a) ${aluno01.nome}!`)
-var entrar = prompt(`${aluno01.nome}, bem-vindo(a). Deseja entrar? (s ou n): `)
-if(entrar=="s"){
-    while(entrar=="s"){
-        aluno01.contador++
-        contador_total++
-        var entrar = prompt("Deseja entrar novamente? (s ou n) ")
-    }
-    console.log(`O aluno ${aluno01.nome} entrou ${aluno01.contado}`)
-}
+var c =  "true"
+console.log(typeof c)
+//Saída: string
+
+var d =  false
+console.log(typeof d)
+//Saída: boolean
+
+var e =  "304958"
+console.log(typeof e)
+//Saída: string
+
+var f =  -2343
+console.log(typeof f)
+//Saída: number
+
+var g =  "23/12/99"
+console.log(typeof g)
+//Saída: string
+
+var h =  true
+console.log(typeof h)
+//Saída: boolean
+
+var i =  "NOME"
+console.log(typeof i)
+//Saída: string
+
+var j =  0.5
+console.log(typeof j)
+//Saída: number
+
+var k =  NOME
+console.log(typeof k)
+//Saída: NOME is not defined
+
+var l =  'i'
+console.log(typeof l)
+//Saída: string
+
+
+//Exercício 02 - Indique o(s) tipo(s) de constante(s) como String, Number ou Boolean que pode(m) ser utilizado(s) para representar:
+/* 
+a. Nome de um país; String
+
+b. Registro Geral (RG); Number ou String
+
+c. Cadastro Nacional da Pessoa Jurídica (CNPJ); Number ou String
+
+d. Se é ou não maior de idade; Booleano
+
+e. Idade; Number
+
+f. Endereço; String
+*/
+
+
+//Exercício 03 - Diga se são válidas as afirmações a seguir. Se não forem, explique por quê:
+/*
+a. Pode se utilizar variáveis numéricas para representar a placa de uma automóvel.
+Resposta: Não. Pois a placa de um veículo contém letras, o que não é aceito como tipo numérico.
+
+b. Variáveis do tipo String só podem conter letras.
+Resposta: Não necessáriamente. O tipo string pode conter outros símbolos além das letras, porém para isso seria necessário definir um encoder.
+
+c. São consideradas constantes lógicas os valores: true e false; verdadeiro e falso; sim e não.
+Resposta: Sim.
+*/
+
+
+//Exercício 04 - Utilizando como referência a biblioteca Matemática do JavaScript qual o valor final das expressões a seguir?
+var a = Math.sqrt ((45*2-30/5-8),2.0)
+console.log(a)
+//Saída: 8.717797887081348
+
+var b = Math.pow(-3,3)
+console.log(b)
+//Saída: -27
+
+var c = 27-Math.pow(3,4)
+console.log(c)
+//Saída: -54
+
+var d = 70-(50/2)-5*3
+console.log(d)
+//Saída: 30
+
+var e = Math.round(Math.pow(-70.75,4))
+console.log(e)
+//Saída: 25055656
+
+
+//Exercício 05 - 
+let A, B, C, D ,E 
+A = 20; //Saída: 20
+B = (40 + A)/3 //Saída: 20
+C = Math.sqrt((A+80),2.0) //Saída: 10
+D = (A>=B) //Saída: true
+E = (C == B) //Saída: false
+
+console.log(A," ",B," ",C," ",D," ",E)
+//Saída: 20 20 10 true false
+
+
+//Exercício 06 - Qual é o resultado das operações quando o algoritmo encontrar as seguintes linhas:
+console.log("mario" == "maria") //Saída: false
+console.log(2+4 == 6) //Saída: true
+console.log(10-4 > 7) //Saída: false
+console.log((2*3)>(3*2)) //Saída: false
+console.log(!("a" > "A")) //Saída: false
