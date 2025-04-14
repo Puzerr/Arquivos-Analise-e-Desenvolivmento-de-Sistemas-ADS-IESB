@@ -802,6 +802,115 @@ console.log(`O aluno ${aluno04} entrou no restaurante ${count04} vezes. Represen
 console.log(`O aluno ${aluno05} entrou no restaurante ${count05} vezes. Representando ${percent_aluno05}% das entradas.`)
 }
 
+/*--------------------------------------------------------*/
+
+/*Escrever o nome, linha a linha, 10 vezes*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var entrada = prompt("Digite o seu nome: ")
+var count = 0
+const limite = 10
+
+for(entrada;count<=limite;count++){
+    console.log(count," - O seu nome é: ",entrada)
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Condicional com sexo e idade*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var nome = prompt("Digite o seu nome: ")
+var idade = Number(prompt("Digite a sua idade: "))
+var sexo = prompt("Digite o seu sexo (m ou f): ").toUpperCase()
+
+if(sexo=="F" && idade<25){
+    console.log("ACEITA")
+}else{
+    console.log("NAO ACEITA")
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Seletor de estado a partir da sigla, usando switch case*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var estado = prompt("Digite a sigla do seu estado: ")
+
+switch(estado.toUpperCase()){
+    case "RJ":
+        console.log("Carioca")
+        break;
+    case "São Paulo":
+        console.log("Paulista")
+        break;
+    case "MG":
+        console.log("Mineiro")
+        break;
+    default:
+        console.log("Outros Estados.")
+}
+}
+
+/*--------------------------------------------------------*/
+
+/*Manipulação de médias de números*/
+{
+var media1, media2, soma_media, media_media
+media1 = (8+9+7)/3
+media2 = (4+5+6)/3
+soma_media = media1+media2
+media_media = (media1+media2)/2
+console.log(media1," ",media2," ",soma_media," ",media_media)
+}
+
+/*--------------------------------------------------------*/
+
+/*Leitura de um número, adicionando e subtraindo de seu valor*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var entrada = Number(prompt("Digite um número: "))
+
+if(entrada!=null && entrada!=undefined){
+    console.log("O número escolhido foi: ",entrada)
+    console.log("O sucessor é: ",entrada+1)
+    console.log("O antecessor é: ",entrada-1)
+}
+}
+
+/*--------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------*/
+
+/*Cálculo (errado) do consumo mensal de energia*/
+{
+const prompt = require("prompt-sync")({signit:true})
+
+var consumo_energia = Number(prompt("Digite o seu consumo de energia em KW: "))
+var salario = Number(prompt("Digite o seu salário: "))
+var dia_pag = Number(prompt("Dia do pagamento: "))
+const tarifa = salario/7
+const limite_pag_dia = 5
+var valor_final = 0
+
+if(dia_pag == limite_pag_dia){
+    valor_final = consumo_energia*tarifa
+    valor_final = valor_final*0.9
+    console.log("R$",valor_final.toFixed(2))
+}else{
+    valor_final = consumo_energia*tarifa
+    console.log("R$",valor_final.toFixed(2))
+}
+}
+
 /*------------------Trabalho 1° bimestre------------------*/
 
 //Exercício 01 - Identifique de que tipo (String, Number ou Boolean) são as constantes a seguir:
@@ -923,3 +1032,122 @@ console.log(2+4 == 6) //Saída: true
 console.log(10-4 > 7) //Saída: false
 console.log((2*3)>(3*2)) //Saída: false
 console.log(!("a" > "A")) //Saída: false
+
+
+/*Exercício 07 - Faça um programa que receba três variáveis a, b, c, pelo teclado e após
+receber faça:
+1°-VERIFIQUE qual deles é o MAIOR e qual é o MENOR;
+2°-VERIFIQUE se os três números SÃO iguais;
+3°-IMPRIMA o MAIOR número o MENOR número e caso eles sejam IGUAIS imprima “Os números SÃO IGUAIS”.
+4°-CONSIDERE que podem haver dois números iguais e um diferente, assim, você deve tratar esta situação.*/
+const prompt = require("prompt-sync")({signit:true})
+var a = Number(prompt("Digite o primeiro número: "))
+var b = Number(prompt("Digite o segundo número: "))
+var c = Number(prompt("Digite o terceiro número: "))
+
+//Verificar qual é o maior
+if((a>b) && (a>c)){
+    console.log("O número",a," é o maior!")
+}else if((b>a) && (b>c)){
+    console.log("O número ",b," é o maior!")
+}else if((c>a) && (c>b)){
+    console.log("O número ",c," é o maior!")
+}
+
+//Verificar qual é o maior
+if((a<b) && (a<c)){
+    console.log("O número ",a," é o menor!")
+}else if((b<a) && (b<c)){
+    console.log("O número ",b," é o menor!")
+}else if((c<a) && (c<b)){
+    console.log("O número ",c," é o menor!")
+}
+
+//Verificar se são iguais
+if(a==b && a==c){
+    console.log("O primeiro, segundo e terceiro número são iguais.(",a,")")
+}else if(a == b){
+    console.log("O primeiro número (",a,") é igual ao segundo número (",b,")")
+}else if(a == c){
+    console.log("O primeiro número (",a,") é igual ao terceiro número (",c,")")
+}else if(b == c){
+    console.log("O segundo número (",b,") é igual ao terceiro número (",c,")")
+}else{
+    console.log("O primeiro, segundo e terceiro número são iguais.(",a,")")
+}
+
+//Exercício 08 - Anacleto tem 1,50m e cresce 2cm por ano, enquanto Felisberto tem 1,10m e cresce 3cm por ano. Construa um algoritmo que calcule e imprima quantos anos serão necessários para que Felisberto seja maior que Anacleto.
+
+var anac_alt = 150, felisb_alt = 110, tempo = 0
+const  anac_cresc = 2, felisb_cresc = 3
+
+while(felisb_alt <= anac_alt){
+    anac_alt = (anac_alt + anac_cresc)
+    felisb_alt = (felisb_alt + felisb_cresc)
+    tempo++
+}
+console.log(`Irá levar ${tempo} anos para que Felisberto seja maior que Anacleto`)
+//Saída: Irá levar 41 anos para que Felisberto seja maior que Anacleto
+
+
+/*Exercício 09 - Faça um programa que receba dados do teclado e calcule a capacidade de um objeto com formato cilíndrico, para tanto precisamos encontrar a área da base circular e multiplicar pela sua altura. O cálculo da área do círculo é realizado utilizando a medida
+do raio e o valor do número π (pi) que é igual a 3,14. Após receber os dados faça:
+    CÁLCULO do volume utilizando a fórmula: volume = (3,14 * raio * raio * altura) /1000;
+    VERIFIQUE o volume e de acordo com a escala abaixo:
+        VOLUME MENOR ou IGUAL a 10 – Mensagem: “Este é um objeto PEQUENO”;
+        VOLUME MAIOR que 10 e MENOR ou IGUAL que 100 – Mensagem: “Este é um objeto MÉDIO”;
+        VOLUME MAIOR que 100 – Mensagem: “Este é um objeto GRANDE” .
+IMPRIMA o volume do objeto, e a mensagem de acordo o volume obtido
+(conforme especificado no item b).*/
+
+const prompt = require("prompt-sync")({signit:true})
+
+var raio = Number(prompt("Digite o valor do raio (centímetros): "))
+var altura = Number(prompt("Digite a altura (centímetros): "))
+const pi = 3.14
+var base = raio*Math.pow(pi,2)
+var volume = (base*altura)/1000
+
+if(volume <= 10){
+    console.log(`Este é um objeto PEQUENO (${volume.toFixed(3)} litros)`)
+}else if(volume > 10 || volume < 100){
+    console.log(`Este é um objeto MÉDIO (${volume.toFixed(3)} litros)`)
+}else{
+    console.log(`Este é um objeto GRANDE (${volume.toFixed(3)} litros)`)
+}
+
+//Exercício 10 - Faça um algoritmo que leia um conjunto de dados numéricos (X) e mostra na tela o maior dentre eles e quantos são iguais. Admita que o valor 9999 é utilizado como sentinela.
+
+const prompt = require("prompt-sync")({signit:true})
+
+const vetor1 = []; const vetor2 = []
+var entrada = Number(prompt("Digite o seu número (9999 para sair): "))
+
+while(entrada!=9999 && !isNaN(entrada)){
+    if(entrada==9999){
+        break
+    }
+    vetor1.push(entrada)
+    vetor2.push(entrada)
+    entrada = prompt("Digite novamente (9999 para sair): ")
+}
+
+for(i=0;i< vetor1.length;i++){
+    if(vetor1[i]>vetor2[i++]){
+        var maior = 0
+        maior = vetor1[i]
+    }else{
+        console.log(maior)
+        break
+    }
+}
+
+for(i=0;i<= vetor1.length;i++){
+    if(vetor1[i]==vetor2[i++]){
+        var count = 1
+        count = count+1
+    }
+}
+
+console.log(`O maior número é o ${maior}`)
+console.log(`Do total de ${vetor1.length} números, ${count} são iguais.`)
