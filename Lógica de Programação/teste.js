@@ -1120,7 +1120,7 @@ if(volume <= 10){
 
 const prompt = require("prompt-sync")({signit:true})
 
-const vetor1 = []; const vetor2 = []
+const vetor1 = []
 var entrada = Number(prompt("Digite o seu número (9999 para sair): "))
 
 while(entrada!=9999 && !isNaN(entrada)){
@@ -1128,26 +1128,109 @@ while(entrada!=9999 && !isNaN(entrada)){
         break
     }
     vetor1.push(entrada)
-    vetor2.push(entrada)
-    entrada = prompt("Digite novamente (9999 para sair): ")
+    entrada = Number(prompt("Digite novamente (9999 para sair): "))
 }
 
-for(i=0;i< vetor1.length;i++){
-    if(vetor1[i]>vetor2[i++]){
-        var maior = 0
-        maior = vetor1[i]
-    }else{
-        console.log(maior)
-        break
+var maior = vetor1[0]
+
+for(i=0; i<vetor1.length; i++){
+    if(maior<vetor1[i+1]){
+        maior = vetor1[i+1]
     }
 }
 
-for(i=0;i<= vetor1.length;i++){
-    if(vetor1[i]==vetor2[i++]){
+for(let i=0; i<=vetor1.length; i++){
+    if(vetor1[i]==vetor1[i++]){
         var count = 1
-        count = count+1
+        count = count++
     }
+}
+
+for(var i=0, count=0; i<vetor1.length; i++){
+    var j = vetor1[i++]
+    for(i, count, j; j<vetor1.length; j++){
+        if(vetor1[i]==vetor1[j]){
+            if(vetor1[i]!=vetor1[j--] && vetor1[i]==vetor1[j]){
+                count = count+2
+            }else if(vetor1[i]==vetor1[j--] && vetor1[i]==vetor1[j++]){
+                count++
+            }
+        }
+    }
+    i++
 }
 
 console.log(`O maior número é o ${maior}`)
 console.log(`Do total de ${vetor1.length} números, ${count} são iguais.`)
+
+//Não consegui resolver a questão dos números iguais
+
+//Exercício 11 - Ler um valor inteiro (aceitar somente valores entre 1 e 10) e escrever a tabuada de 1 a 10 do valor lido.
+
+const prompt = require("prompt-sync")({signit:true})
+
+var num = parseInt(Number(prompt("Digite o seu número: ")))
+
+while(num<1 || num>10){
+    num = parseInt(Number(prompt("O número deve ser entre 1 e 10: ")))
+    for(var i=1, multi=0; i<=10; i++){
+        multi = num*i
+        console.log(`${num} X ${i} é igual a ${multi}`)
+    }
+}
+
+//Exercício 12 - Os triângulos podem ser classificados em 3 tipos quanto ao tamanho de seus lados: Equilátero: Os três lados são iguais. Isósceles: Dois lados iguais. Escaleno: Todos os lados são diferentes. Crie uma função que recebe os comprimentos dos três lados de um triângulo e retorne sua classificação quanto ao tamanho de seus lados. (Neste exemplo deve-se abstrair as condições matemáticas de existência de um triângulo).
+
+const prompt = require("prompt-sync")({signit:true})
+
+var lado1 = Number(prompt("Lado 1: "))
+var lado2 = Number(prompt("Lado 2: "))
+var lado3 = Number(prompt("Lado 3: "))
+
+if((lado1==lado2) && (lado1==lado3)){
+    console.log("Equilátero!")
+}else if((lado1==lado2) && (lado1!=lado3)){
+    console.log("Isóceles!")
+}else if((lado1==lado3) && (lado1!=lado2)){
+    console.log("Isóceles!")
+}else if((lado2==lado3) && (lado2!=lado1)){
+    console.log("Isóceles!")
+}else if((lado1!=lado2) && (lado1!=lado3)){
+    console.log("Escaleno!")
+}
+
+/*Exercício 13 - Leia o vetor Pontuações["33, 44, 20, 4, 51, 25, 42, 38, 56, 0, 22, 1, 104, 99, 77, 88, 3"] e responda:
+a. MAIOR pontuação
+b. MENOR pontuação
+c. QUANTIDADE de quebra de recordes
+d. PIOR jogo*/
+
+var pontuacoes = ["33, 44, 20, 4, 51, 25, 42, 38, 56, 0, 22, 1, 104, 99, 77, 88, 3"]
+var pontuacoesString = pontuacoes[0].split(", ")
+
+const pontuacoesNumber = []
+for(var i=0;i<pontuacoesString.length;i++){
+    var numero = parseInt(pontuacoesString[i])
+    pontuacoesNumber.push(numero)
+}
+
+var recorde = 0, i=0
+var maior=pontuacoesNumber[0]
+for(recorde, maior, i; i<pontuacoesNumber.length; i++){
+    if(maior<pontuacoesNumber[i+1]){
+        maior = pontuacoesNumber[i+1]
+        recorde=recorde+1
+    }
+}
+
+var menor = pontuacoesNumber[0]
+for(i=0; i<pontuacoesNumber.length; i++){
+    if(menor>pontuacoesNumber[i+1]){
+        menor = pontuacoesNumber[i+1]
+    }
+}
+
+console.log(`A maior pontuação foi ${maior}.`)
+console.log(`A menor pontuação foi ${menor}.`)
+console.log(`${recorde} recordes foram quebrados`)
+console.log(`O pior jogo teve ${menor} pontos.`)
