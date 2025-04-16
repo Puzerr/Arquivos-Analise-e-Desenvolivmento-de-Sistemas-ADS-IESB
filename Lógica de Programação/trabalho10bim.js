@@ -232,7 +232,7 @@ for(let i=0; i<=vetor1.length; i++){
         count = count++
     }
 }
-
+/*
 for(var i=0, count=0; i<vetor1.length; i++){
     var j = vetor1[i++]
     for(i, count, j; j<vetor1.length; j++){
@@ -245,10 +245,26 @@ for(var i=0, count=0; i<vetor1.length; i++){
         }
     }
     i++
+}*/
+var counttotal=0, i=0 
+for(i, counttotal; i<vetor1.length; i++){
+    var countlocal, counttotal
+    var j = vetor1[i++]
+    for(i, j, countlocal = 0; j<vetor1.length; j++){
+        if(vetor1[i]==vetor1[j]){
+            countlocal+2
+            console.log("Iguais")
+        }
+    }
+    countlocal=(countlocal/2)+1
+    console.log(countlocal)
+    counttotal=counttotal+countlocal
 }
 
+console.log(counttotal)
+
 console.log(`O maior número é o ${maior}`)
-console.log(`Do total de ${vetor1.length} números, ${count} são iguais.`)
+console.log(`Do total de ${vetor1.length} números, ${counttotal} são iguais.`)
 
 //Não consegui resolver a questão dos números iguais
 
